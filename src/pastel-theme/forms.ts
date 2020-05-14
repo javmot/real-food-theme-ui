@@ -24,6 +24,7 @@ export default {
     resize: "none",
   },
   label: {
+    fontWeight: "heading",
     material: {
       cursor: "text",
       transition: "transform 0.15s ease-in-out",

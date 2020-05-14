@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Input, Label, Box } from "theme-ui";
 
 let idx = 0;
-const unique = () => `material-field-${idx++}`;
+const unique = () => `styled-field-${idx++}`;
 
 const Field = ({
   label,

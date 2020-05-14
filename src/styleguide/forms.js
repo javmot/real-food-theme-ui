@@ -19,8 +19,8 @@ export default () => (
       </Box>
     </Flex>
     <Box sx={{ width: ["100%", null, null, "60%"] }}>
-      <Styled.h2>Material Field</Styled.h2>
-      <MaterialField label="Email" name="email" defaultValue="" />
+      <Styled.h2>Form Fields</Styled.h2>
+      <MaterialField label="Material" name="material" defaultValue="" />
       <Grid gap={4} py={5} columns={2}>
         <Field label="Email" name="email2" defaultValue="" />
         <Field
