@@ -12,13 +12,14 @@ function getPathName(path = "") {
 }
 export default ({ paths = [] }) => (
   <Flex
+    as="aside"
     p={4}
     sx={{
       flexDirection: "column",
     }}
   >
     {paths.map((path) => (
-      <NavLink to={path} p={2} as={Link}>
+      <NavLink key={path} to={path} p={2} as={Link}>
         {getPathName(path)}
       </NavLink>
     ))}

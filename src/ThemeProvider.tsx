@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "theme-ui";
-import theme from "./theme";
+import theme from "./pastel-theme/theme";
 
 interface ThemeProviderProps {
   children: React.ReactNode;

@@ -4,12 +4,11 @@ import { Styled } from "theme-ui";
 import { TypeScale, TypeStyle, ColorPalette } from "@theme-ui/style-guide";
 export default () => (
   <div>
-    <Styled.h2>Base Styles</Styled.h2>
-    <Styled.h3>Color Palette</Styled.h3>
+    <Styled.h2>Color Palette</Styled.h2>
     <ColorPalette />
-    <Styled.h3>Type Scale</Styled.h3>
+    <Styled.h2>Type Scale</Styled.h2>
     <TypeScale />
-    <Styled.h3>Font Styles</Styled.h3>
+    <Styled.h2>Font Styles</Styled.h2>
     <TypeStyle
       fontFamily="heading"
       fontWeight="heading"

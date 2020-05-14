@@ -1,3 +1,3 @@
-import { Button } from "theme-ui";
+import Button from "./button";
 
 export default Button;
