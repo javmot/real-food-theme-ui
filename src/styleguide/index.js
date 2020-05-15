@@ -7,7 +7,7 @@ import Base from "./base";
 import Forms from "./forms";
 export default () => (
   <Router>
-    <Grid gap={2} p={2} columns={[2, "200px 1fr"]}>
+    <Grid gap={2} p={2} pb={8} columns={[2, "200px 1fr"]}>
       <Sidebar paths={["/", "/forms"]} />
       <Box
         sx={{

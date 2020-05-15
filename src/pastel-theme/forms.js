@@ -43,6 +43,9 @@ export default {
       focus: {
         color: "secondary",
       },
+      error: {
+        color: "error",
+      },
     },
   },
   status: {
@@ -51,6 +54,9 @@ export default {
     },
     focus: {
       borderBottomColor: "secondaryLight",
+    },
+    error: {
+      borderBottomColor: "error",
     },
   },
 };

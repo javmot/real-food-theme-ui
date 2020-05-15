@@ -1,22 +1,40 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { useState } from "react";
-import { Input, Label, Box } from "theme-ui";
+import { Input, Label, Box, Text } from "theme-ui";
 
 let idx = 0;
 const unique = () => `styled-field-${idx++}`;
+const getInitialStatus = (initial, error) => {
+  if (error) return "error";
+
+  return initial;
+};
+export interface FieldProps {
+  label: string;
+  as?: any;
+  name?: string;
+  status?: string;
+  error?: string;
+  children?: React.ReactNode;
+  defaultValue?: string;
+  onFocus?: (event: any) => void;
+  onChange?: (event: any) => void;
+  onBlur?: (event: any) => void;
+}
 
 const Field = ({
-  label,
-  as: Control = Input,
+  as: Control,
   name = unique(),
-  status: initialStatus = "normal",
+  status: initialStatus,
+  label,
+  error,
   ...props
-}) => {
-  const [status, setStatus] = useState(initialStatus);
+}: FieldProps) => {
+  const [status, setStatus] = useState(getInitialStatus(initialStatus, error));
 
   const onFocusChange = (focus) => (e) => {
-    setStatus(focus ? "focus" : "normal");
+    setStatus(focus ? "focus" : getInitialStatus(initialStatus, error));
 
     if (focus && props.onFocus) props.onFocus(e);
     if (!focus && props.onBlur) props.onBlur(e);
@@ -25,11 +43,11 @@ const Field = ({
   return (
     <Box>
       <Label
-        htmlFor={name}
         sx={{
           variant: `forms.label.status.${status}`,
         }}
         {...props}
+        htmlFor={name}
       >
         {label}
       </Label>
@@ -43,8 +61,24 @@ const Field = ({
         id={name}
         name={name}
       ></Control>
+      {error && (
+        <Text
+          sx={{
+            textAlign: "right",
+          }}
+          pt={1}
+          variant="error"
+        >
+          {error}
+        </Text>
+      )}
     </Box>
   );
+};
+
+Field.defaultProps = {
+  as: Input,
+  status: "normal",
 };
 
 export default Field;

@@ -2,7 +2,6 @@ import React from "react";
 import { action } from "@storybook/addon-actions";
 
 import Button from "./index";
-import { Styled } from "theme-ui";
 
 export default {
   component: Button,
@@ -21,7 +20,6 @@ export const actionsData = {
 
 export const Default = () => (
   <>
-    <Styled.h1>Almost before we knew it, we had left the ground.</Styled.h1>
     <Button {...buttonData} {...actionsData}></Button>
   </>
 );

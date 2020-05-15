@@ -18,7 +18,7 @@ export default () => (
         <Button variant="muted">Button</Button>
       </Box>
     </Flex>
-    <Box sx={{ width: ["100%", null, null, "60%"] }}>
+    <Box sx={{ width: ["full", null, null, 6] }}>
       <Styled.h2>Form Fields</Styled.h2>
       <MaterialField label="Material" name="material" defaultValue="" />
       <Grid gap={4} py={5} columns={2}>
@@ -43,6 +43,16 @@ export default () => (
         defaultValue="Hello"
       />
       <Button mt={4}>Submit</Button>
+      <Styled.h2>Status</Styled.h2>
+      <Field label="Focus" name="error" status="focus" />
+      <Box mt={5}>
+        <Field
+          label="Error"
+          name="error"
+          status="error"
+          error="This is one error"
+        />
+      </Box>
     </Box>
   </div>
 );

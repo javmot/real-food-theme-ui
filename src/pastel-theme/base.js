@@ -1,8 +1,21 @@
-export default {
+const base = {
   space: [0, 4, 8, 12, 20, 28, 36, 48, 72],
   radii: [0, 1, 2, 4],
-  borderWidths: [0, 1, 3],
+  borderWidths: [0, 1, 3, 5],
   borders: ["none"],
+  sizes: [
+    0,
+    "10%",
+    "20%",
+    "30%",
+    "40%",
+    "50%",
+    "60%",
+    "70%",
+    "80%",
+    "90%",
+    "100%",
+  ],
   fonts: {
     body: "Lato",
     heading: "Calistoga",
@@ -37,5 +50,10 @@ export default {
     muted: "#E2CCA6",
     mutedDark: "#C9B693",
     mutedLight: "#F0D8AF",
+    error: "#A36555",
   },
 };
+// Aliases
+base.sizes.full = base.sizes[10];
+
+export default base;
