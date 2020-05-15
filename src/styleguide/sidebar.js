@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { Flex, NavLink } from "theme-ui";
-import { Link } from "react-router-dom";
+import { NavLink as RouterLink } from "react-router-dom";
 
 function capitalize(name) {
-  return name.charAt(0).toUpperCase() + name.slice(1) || "Base";
+  return name.charAt(0).toUpperCase() + name.slice(1);
 }
 
 function getPathName(path = "") {
@@ -19,7 +19,14 @@ export default ({ paths = [] }) => (
     }}
   >
     {paths.map((path) => (
-      <NavLink key={path} to={path} p={2} as={Link}>
+      <NavLink
+        key={path}
+        to={path}
+        p={2}
+        strict={true}
+        exact={true}
+        as={RouterLink}
+      >
         {getPathName(path)}
       </NavLink>
     ))}

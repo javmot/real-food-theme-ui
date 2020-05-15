@@ -18,10 +18,10 @@ export default () => (
         <Button variant="muted">Button</Button>
       </Box>
     </Flex>
-    <Box sx={{ width: ["full", null, null, 6] }}>
+    <Box sx={{ width: ["full", "full", 8, 5] }}>
       <Styled.h2>Form Fields</Styled.h2>
       <MaterialField label="Material" name="material" defaultValue="" />
-      <Grid gap={4} py={5} columns={2}>
+      <Grid gap={[3, 3, 3, 7]} py={5} columns={2}>
         <Field label="Email" name="email2" defaultValue="" />
         <Field
           as={Select}
