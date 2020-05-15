@@ -3,6 +3,7 @@ const base = {
   radii: [0, 1, 2, 4],
   borderWidths: [0, 1, 3, 5],
   borders: ["none"],
+  zIndices: [-1, 0, 1, 10, 100],
   sizes: [
     0,
     "10%",

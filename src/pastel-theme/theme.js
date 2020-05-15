@@ -6,8 +6,8 @@ import text from "./text";
 
 export default {
   ...base,
+  ...buttons,
   text,
-  buttons,
   forms,
   styles,
 };
