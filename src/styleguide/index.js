@@ -8,10 +8,10 @@ import Forms from "./forms";
 export default () => (
   <Router>
     <Grid gap={2} p={2} pb={8} columns={[2, "200px 1fr"]}>
-      <Sidebar paths={["/base", "/forms"]} />
+      <Sidebar paths={["/", "/forms"]} />
       <Box>
         <Switch>
-          <Route path="/base">
+          <Route exact path="/">
             <Styled.h1>Base Styles</Styled.h1>
             <Base />
           </Route>

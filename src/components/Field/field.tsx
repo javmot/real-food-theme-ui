@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Input, Label, Box, Text } from "theme-ui";
 
 let idx = 0;
-const unique = () => `styled-field-${idx++}`;
+const unique = (prefix = "styled-field") => `${prefix}-${idx++}`;
 const getInitialStatus = (initial, error) => {
   if (error) return "error";
 
@@ -25,13 +25,14 @@ export interface FieldProps {
 
 const Field = ({
   as: Control,
-  name = unique(),
+  name,
   status: initialStatus,
   label,
   error,
   ...props
 }: FieldProps) => {
   const [status, setStatus] = useState(getInitialStatus(initialStatus, error));
+  const id = unique(name);
 
   const onFocusChange = (focus) => (e) => {
     setStatus(focus ? "focus" : getInitialStatus(initialStatus, error));
@@ -47,7 +48,7 @@ const Field = ({
           variant: `forms.label.status.${status}`,
         }}
         {...props}
-        htmlFor={name}
+        htmlFor={id}
       >
         {label}
       </Label>
@@ -58,8 +59,8 @@ const Field = ({
         {...props}
         onFocus={onFocusChange(true)}
         onBlur={onFocusChange(false)}
-        id={name}
-        name={name}
+        id={id}
+        name={id}
       ></Control>
       {error && (
         <Text
